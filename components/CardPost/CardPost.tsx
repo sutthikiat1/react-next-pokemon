@@ -64,6 +64,7 @@ function CardPost({ pokemon }) {
       payload: {
         id,
         name,
+        img: sprites.other.dream_world.front_default,
       },
     });
 

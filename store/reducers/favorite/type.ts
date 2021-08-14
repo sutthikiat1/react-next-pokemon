@@ -10,6 +10,7 @@ export interface FavoriteProps {
 export interface pokemonsProp {
   id: string;
   name: string;
+  img: string;
 }
 
 export const initialState: FavoriteProps = {
