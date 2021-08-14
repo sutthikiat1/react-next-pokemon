@@ -4,11 +4,10 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import IconProfile from "components/IconProfile/IconProfile";
 import Image from "next/image";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { SET_FAVORITE } from "store/reducers/favorite/action";
 import { SET_LOADING_FULLPAGE } from "store/reducers/loading/action";
 import { useMediaQuery } from "beautiful-react-hooks";
-import { useSelector } from "react-redux";
 import typeStore from "store/type";
 import { useRouter } from "next/router";
 
@@ -67,6 +66,7 @@ function CardPost({ pokemon }) {
         name,
       },
     });
+
     setFavorite(true);
     setTimeout(() => {
       setFavorite(false);
@@ -115,7 +115,9 @@ function CardPost({ pokemon }) {
             placeholder="blur"
             blurDataURL={sprites.other.dream_world.front_default}
             onClick={() => doubletap()}
-            onDoubleClick={() => handleFavorite()}
+            onDoubleClick={() => {
+              if (!isMobile) handleFavorite();
+            }}
           />
           {isFavorite && <Favorite />}
         </BoxProfile>

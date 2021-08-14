@@ -7,6 +7,7 @@ import typeStore from "store/type";
 import SearchInput from "components/SearchInput/SearchInput";
 function Navbar() {
   const { pokemons } = useSelector((state: typeStore) => state.favorite);
+
   return (
     <Main>
       <Container>
@@ -21,7 +22,7 @@ function Navbar() {
         <SearchInput />
         <BoxLogo>
           <i className="fas fa-heart"></i>
-          <BoxAmountFavorite>{pokemons.length}</BoxAmountFavorite>
+          <BoxAmountFavorite>{pokemons.length || 0}</BoxAmountFavorite>
         </BoxLogo>
       </Container>
     </Main>

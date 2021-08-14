@@ -29,7 +29,7 @@ function SearchInput() {
           type: SET_ALERT,
           payload: {
             open: true,
-            text: "ชื่อที่ค้นหาไม่ถูกต้อง",
+            text: "Invalid name pokemon",
           },
         });
       }
