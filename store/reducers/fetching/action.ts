@@ -1,0 +1,2 @@
+export const SET_FETCHING = "SET_FETCHING";
+export const RESET_FETCHING = "RESET_FETCHING";

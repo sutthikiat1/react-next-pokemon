@@ -1,0 +1,3 @@
+const SET_ALERT = "SET_ALERT";
+const RESET_ALERT = "RESET_ALERT";
+export { SET_ALERT, RESET_ALERT };
