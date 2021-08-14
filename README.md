@@ -1,4 +1,4 @@
-### Demo : https://pokedex-sutthikiat.netlify.app
+### Demo : https://sutthikiat-pokemon.netlify.app/
 
 ### Challenge [ Develop the Instagram-clone web application with your favorite content such as Pokemon, Star Wars, GitHub which contains requirements below. ]
 
@@ -8,6 +8,14 @@
 - Can click button detail Card Pokemon for view detail pokemon
 - Can infinite scrolling loading more pokemon
 
-### fetches content and image from an API by https://pokeapi.co/
+## Technologies Used
 
-![Pokédex MockUp](screenshot/exam-crop.gif)
+- [React](https://reactjs.org/)
+- [Nextjs](https://nextjs.org/)
+- [Redux](https://redux.js.org/)
+- [Styled-component](https://styled-components.com/)
+- [Redux Persist](https://github.com/rt2zz/redux-persist#readme)
+- [Framer Motion](https://www.framer.com/)
+- [React Visibility Sensor](https://github.com/joshwnj/react-visibility-sensor#readme)
+
+### fetches content and image from an API by https://pokeapi.co/
