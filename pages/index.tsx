@@ -73,6 +73,7 @@ const Index = ({ dataFetch }) => {
           <BoxRecommend />
         </SectionMain>
       </ContainerMain>
+      <BoxBackground />
     </Container>
   );
 };
@@ -96,8 +97,23 @@ const SectionMain = styled.section`
   flex-grow: 1;
   display: flex;
   overflow: hidden;
+  z-index: 2;
   @media only screen and (max-width: ${Constant.SCREEN_SIZE.XS}px) {
     flex-wrap: wrap-reverse;
+  }
+`;
+const BoxBackground = styled.div`
+  position: fixed;
+  left: 0;
+  bottom: 0px;
+  width: 820px;
+  height: 500px;
+  background-image: url("/image/logo/pokemon-bg.png");
+  background-size: cover;
+  z-index: 1;
+  opacity: 0.2;
+  @media only screen and (max-width: ${Constant.SCREEN_SIZE.XS}px) {
+    display: none;
   }
 `;
 
