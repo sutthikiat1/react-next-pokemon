@@ -105,7 +105,12 @@ function CardPost({ pokemon }) {
           />
         </div>
       </BoxHeadeer>
-      <BoxBody>
+      <BoxBody
+        onClick={() => doubletap()}
+        onDoubleClick={() => {
+          if (!isMobile) handleFavorite();
+        }}
+      >
         <BoxProfile>
           <BoxCircle />
           <Image
@@ -115,10 +120,6 @@ function CardPost({ pokemon }) {
             height={280}
             placeholder="blur"
             blurDataURL={sprites.other.dream_world.front_default}
-            onClick={() => doubletap()}
-            onDoubleClick={() => {
-              if (!isMobile) handleFavorite();
-            }}
           />
           {isFavorite && <Favorite />}
         </BoxProfile>
@@ -261,6 +262,12 @@ const BoxBody = styled.div`
   flex-direction: column;
   background-color: #fff;
   cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 `;
 const BoxProfile = styled.div`
   width: 100%;
@@ -279,7 +286,6 @@ const BoxCircle = styled.div`
   width: 325px;
   height: 325px;
   border-radius: 50%;
-
   background-image: url("/image/logo/pokeball-bg.png");
   background-repeat: no-repeat;
   background-size: 325px 325px;
@@ -290,7 +296,6 @@ const BoxFooter = styled.div`
   width: 100%;
   height: 120px;
   text-align: center;
-
   background-color: #c71129;
   display: flex;
   align-items: center;

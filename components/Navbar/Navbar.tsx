@@ -7,7 +7,6 @@ import typeStore from "store/type";
 import SearchInput from "components/SearchInput/SearchInput";
 function Navbar() {
   const { pokemons } = useSelector((state: typeStore) => state.favorite);
-
   return (
     <Main>
       <Container>

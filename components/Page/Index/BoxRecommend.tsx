@@ -1,10 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import Constant from "constant/index";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import typeStore from "store/type";
 import IconProfile from "components/IconProfile/IconProfile";
+import { useRouter } from "next/router";
+import { SET_LOADING_FULLPAGE } from "store/reducers/loading/action";
+
 function BoxRecommend() {
+  const router = useRouter();
+  const dispatch = useDispatch();
   const { pokemons } = useSelector((state: typeStore) => state.favorite);
   return (
     <Container>
@@ -15,7 +20,13 @@ function BoxRecommend() {
               {pokemons.map((pokemon, index) => {
                 const { name, id, img } = pokemon;
                 return (
-                  <li key={`${name}-${id}-${index}`}>
+                  <li
+                    key={`${name}-${id}-${index}`}
+                    onClick={() => {
+                      dispatch({ type: SET_LOADING_FULLPAGE });
+                      router.push(`/pokemon/${name}`);
+                    }}
+                  >
                     {index + 1}.
                     <IconProfile
                       width={24}
@@ -23,6 +34,7 @@ function BoxRecommend() {
                       src={img || "/image/logo/icon_item.png"}
                     />
                     <span>{name}</span>
+                    <i className="fas fa-star"></i>
                   </li>
                 );
               })}
@@ -62,7 +74,6 @@ const BoxPokedex = styled.div`
   background-repeat: no-repeat;
   background-size: 375px 200px;
   margin: 0 auto;
-  cursor: pointer;
 
   @media only screen and (max-width: ${Constant.SCREEN_SIZE.XS}px) {
     position: static;
@@ -82,9 +93,13 @@ const BoxLists = styled.div`
     list-style-type: none;
   }
 
+  li:nth-child(odd) {
+    background: #eb362d;
+  }
+
   li {
     margin: 8px 0px;
-    background: #eb362d;
+    background-color: #ed1038;
     color: #fff;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     font-size: 10px;
@@ -100,6 +115,10 @@ const BoxLists = styled.div`
       display: -webkit-box;
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
+    }
+    cursor: pointer;
+    .fa-star {
+      color: #f1c40f;
     }
   }
 
