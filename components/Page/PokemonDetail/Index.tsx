@@ -3,10 +3,12 @@ import { useRouter } from "next/router";
 import styled from "styled-components";
 import Image from "next/image";
 import Constant from "constant/index";
+import { useDispatch } from "react-redux";
+import { SET_LOADING_FULLPAGE } from "store/reducers/loading/action";
 
 function PokemonDetail({ dataFetch }) {
+  const dispatch = useDispatch();
   const router = useRouter();
-  console.log(dataFetch);
   const {
     name,
     sprites,
@@ -21,7 +23,13 @@ function PokemonDetail({ dataFetch }) {
     <Container>
       <BoxHeader>
         <div className="left">
-          <i className="fas fa-chevron-left" onClick={() => router.back()}></i>
+          <i
+            className="fas fa-chevron-left"
+            onClick={() => {
+              dispatch({ type: SET_LOADING_FULLPAGE });
+              router.back();
+            }}
+          ></i>
           &nbsp;&nbsp;
           {name}
         </div>

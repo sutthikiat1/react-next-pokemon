@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { getPokemonByName } from "service/pokemon";
+import { useDispatch, useSelector } from "react-redux";
+import typeStore from "store/type";
 import PokemonDetail from "components/Page/PokemonDetail/Index";
+import LoadingFullPage from "components/Loading/LoadingFullPage";
+import { RESET_LOADING_ALL } from "store/reducers/loading/action";
 
 function PokemonPage({ dataFetch }) {
+  const dispatch = useDispatch();
+  const { loadingFullPage } = useSelector((state: typeStore) => state.loading);
+  useEffect(() => {
+    if (loadingFullPage) {
+      dispatch({ type: RESET_LOADING_ALL });
+    }
+  }, []);
   return (
     <Container>
+      {loadingFullPage && <LoadingFullPage />}
       <ContainerMain>
         <PokemonDetail dataFetch={dataFetch} />
       </ContainerMain>
