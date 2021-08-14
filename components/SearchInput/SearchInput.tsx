@@ -22,6 +22,7 @@ function SearchInput() {
       const res = await getPokemonByName(useQuery);
       dispatch({ type: RESET_LOADING_ALL });
       if (res.id) {
+        dispatch({ type: SET_LOADING_FULLPAGE });
         router.push(`/pokemon/${useQuery}`);
       } else {
         dispatch({

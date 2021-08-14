@@ -5,7 +5,8 @@ import styled from "styled-components";
 import IconProfile from "components/IconProfile/IconProfile";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
-import { SET_FAVORITE, RESET_FAVORITE } from "store/reducers/favorite/action";
+import { SET_FAVORITE } from "store/reducers/favorite/action";
+import { SET_LOADING_FULLPAGE } from "store/reducers/loading/action";
 import { useMediaQuery } from "beautiful-react-hooks";
 import { useSelector } from "react-redux";
 import typeStore from "store/type";
@@ -149,7 +150,12 @@ function CardPost({ pokemon }) {
             </div>
           </div>
         </BoxListsDetail>
-        <ButtonView onClick={() => router.push(`/pokemon/${name}`)}>
+        <ButtonView
+          onClick={() => {
+            dispatch({ type: SET_LOADING_FULLPAGE });
+            router.push(`/pokemon/${name}`);
+          }}
+        >
           View
         </ButtonView>
       </BoxFooter>

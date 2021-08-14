@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import typeStore from "store/type";
 import { SET_FETCHING } from "store/reducers/fetching/action";
@@ -10,6 +10,7 @@ import BoxRecommend from "components/Page/Index/BoxRecommend";
 import { getPokemonLists, getPokemonByName } from "service/pokemon";
 import PopupAlert from "components/Popup/Popup";
 import LoadingFullPage from "components/Loading/LoadingFullPage";
+import { RESET_LOADING_ALL } from "store/reducers/loading/action";
 
 const Index = ({ dataFetch }) => {
   const { loadingFullPage } = useSelector((state: typeStore) => state.loading);
@@ -18,6 +19,12 @@ const Index = ({ dataFetch }) => {
     data: dataFetch.data,
     count: dataFetch.count,
   });
+
+  useEffect(() => {
+    if (loadingFullPage) {
+      dispatch({ type: RESET_LOADING_ALL });
+    }
+  }, []);
 
   const handleGetPokemonLists = async () => {
     const { results: pokemons } = await getPokemonLists(

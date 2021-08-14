@@ -9,7 +9,7 @@ let store;
 const persistConfig = {
   key: "pokemon",
   storage,
-  blacklist: ["fetching"],
+  blacklist: ["fetching", "loading"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
