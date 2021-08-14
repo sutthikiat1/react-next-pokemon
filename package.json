@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@babel/core": "^7.15.0",
     "beautiful-react-hooks": "^0.35.0",
     "framer-motion": "^4.1.17",
     "lodash": "^4.17.21",
