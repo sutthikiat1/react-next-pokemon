@@ -27,7 +27,7 @@ function PokemonDetail({ dataFetch }) {
             className="fas fa-chevron-left"
             onClick={() => {
               dispatch({ type: SET_LOADING_FULLPAGE });
-              router.back();
+              router.push('/')
             }}
           ></i>
           &nbsp;&nbsp;
