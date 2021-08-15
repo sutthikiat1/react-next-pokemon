@@ -86,7 +86,6 @@ const BoxLists = styled.div`
   max-width: 235px;
   height: 170px;
   overflow-y: scroll;
-  border: 1px solid red;
   padding: 14px 8px;
   ul,
   li {

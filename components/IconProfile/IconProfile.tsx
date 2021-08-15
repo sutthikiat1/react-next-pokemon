@@ -10,7 +10,14 @@ interface IconProfileProp {
 function IconProfile({ width = 56, height = 56, src }: IconProfileProp) {
   return (
     <Container width={width} height={height}>
-      <Image src={src} alt="me" width={width} height={height} />
+      <Image
+        src={src}
+        alt="icn_profile"
+        width={width}
+        height={height}
+        placeholder="blur"
+        blurDataURL={src}
+      />
     </Container>
   );
 }
