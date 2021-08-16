@@ -67,7 +67,7 @@ const Index = ({ dataFetch }) => {
         descriptionWeb={"Pokémon Web App with React"}
         urlShare={"https://sutthikiat-pokemon.netlify.app/"}
         keywords={"Pokemon"}
-        imageShare={"/image/logo/ghost.png"}
+        imageShare={"/image/logo/pokemon-hero.png"}
         author={"Sutthikiat Phongsakornmetha"}
         siteName={"https://sutthikiat-pokemon.netlify.app/"}
       />
