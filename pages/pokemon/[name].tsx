@@ -23,7 +23,7 @@ function PokemonPage({ dataFetch }) {
         descriptionWeb={"Pokémon Web App with React"}
         urlShare={`https://sutthikiat-pokemon.netlify.app/pokemon/${dataFetch.name}`}
         keywords={`Pokemon ${dataFetch.name}`}
-        imageShare={"/image/logo/pokemon-hero.png"}
+        imageShare={"/image/logo/pokemon-hero.jpeg"}
         author={"Sutthikiat Phongsakornmetha"}
         siteName={`https://sutthikiat-pokemon.netlify.app/pokemon/${dataFetch.name}`}
       />
