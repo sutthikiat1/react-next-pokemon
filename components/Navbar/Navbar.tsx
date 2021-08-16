@@ -28,7 +28,7 @@ function Navbar() {
   );
 }
 
-const Main = styled.div`
+const Main = styled.nav`
   position: fixed;
   width: 100%;
   height: 54px;

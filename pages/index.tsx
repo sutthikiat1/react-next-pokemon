@@ -11,6 +11,7 @@ import { getPokemonLists, getPokemonByName } from "service/pokemon";
 import PopupAlert from "components/Popup/Popup";
 import LoadingFullPage from "components/Loading/LoadingFullPage";
 import { RESET_LOADING_ALL } from "store/reducers/loading/action";
+import SetTagMeta from "components/Metatag/MetaTag";
 
 const Index = ({ dataFetch }) => {
   const { loadingFullPage } = useSelector((state: typeStore) => state.loading);
@@ -61,6 +62,15 @@ const Index = ({ dataFetch }) => {
 
   return (
     <Container>
+      <SetTagMeta
+        titleWeb={"Pokemon"}
+        descriptionWeb={"Pokémon Web App with React"}
+        urlShare={"https://sutthikiat-pokemon.netlify.app/"}
+        keywords={"Pokemon"}
+        imageShare={"/image/logo/ghost.png"}
+        author={"Sutthikiat Phongsakornmetha"}
+        siteName={"https://sutthikiat-pokemon.netlify.app/"}
+      />
       {loadingFullPage && <LoadingFullPage />}
       <PopupAlert />
       <Navbar />

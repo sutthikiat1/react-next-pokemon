@@ -6,6 +6,7 @@ import typeStore from "store/type";
 import PokemonDetail from "components/Page/PokemonDetail/Index";
 import LoadingFullPage from "components/Loading/LoadingFullPage";
 import { RESET_LOADING_ALL } from "store/reducers/loading/action";
+import SetTagMeta from "components/Metatag/MetaTag";
 
 function PokemonPage({ dataFetch }) {
   const dispatch = useDispatch();
@@ -17,6 +18,15 @@ function PokemonPage({ dataFetch }) {
   }, []);
   return (
     <Container>
+      <SetTagMeta
+        titleWeb={`${dataFetch.name}`}
+        descriptionWeb={"Pokémon Web App with React"}
+        urlShare={`https://sutthikiat-pokemon.netlify.app/pokemon/${dataFetch.name}`}
+        keywords={`Pokemon ${dataFetch.name}`}
+        imageShare={`${dataFetch.sprites.other.dream_world.front_default}`}
+        author={"Sutthikiat Phongsakornmetha"}
+        siteName={`https://sutthikiat-pokemon.netlify.app/pokemon/${dataFetch.name}`}
+      />
       {loadingFullPage && <LoadingFullPage />}
       <ContainerMain>
         <PokemonDetail dataFetch={dataFetch} />
