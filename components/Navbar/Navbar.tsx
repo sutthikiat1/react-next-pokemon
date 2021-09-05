@@ -11,8 +11,8 @@ function Navbar() {
     <Main>
       <Container>
         <BoxLogo>
-          <Image
-            src="/image/logo/pokemon_logo.png"
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/bossza-1d29f.appspot.com/o/images%2Flogo-pokemon.png?alt=media&token=4427f6e6-8b4d-4e57-8b87-0bf588a71ec4"
             alt="me"
             width="103"
             height="34"
